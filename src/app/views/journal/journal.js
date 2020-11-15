@@ -26,16 +26,14 @@ class EssayForm extends React.Component {
 
   render() {
     return (
-        <div className='journal-entry'>
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                Journal Entry:
-                <textarea value={this.state.value} onChange={this.handleChange} rows = {20} />
-                </label>
-                <input type="submit" value="Save" />
-            </form>
-        </div>
-
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          <textarea value={this.state.value} onChange={this.handleChange} rows = {20} style={journalStyle.textArea} placeholder="How are you feeling?"/>
+        </label>
+        <br></br>
+        <br></br>
+        <input type="submit" value="Save" className="submit-button" />
+      </form>
     );
   }
 }
@@ -51,6 +49,12 @@ function Journal() {
   );
 }
 
-
+const journalStyle = {
+    textArea: {
+        border: 0,
+        resize: 'none',
+        width: 500,
+    }
+}
 
 export default Journal;
