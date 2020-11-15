@@ -3,7 +3,7 @@ import "./userList.scss";
 
 import axios from "axios"
 
-import { UserCard } from "app/components";
+import { UserCard } from "./app/components";
 
 function UserList() {
 

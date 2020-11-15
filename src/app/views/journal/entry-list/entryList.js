@@ -3,7 +3,7 @@ import "./entryList.scss";
 
 import axios from "axios"
 
-import { EntryCard } from "app/components";
+import { EntryCard } from "./app/components";
 
 function EntryList(props) {
 

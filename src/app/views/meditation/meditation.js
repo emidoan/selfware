@@ -6,7 +6,7 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 import axios from "axios"
 
-import { UserCard } from "app/components";
+import { UserCard } from "./app/components";
 import { render } from "@testing-library/react";
 
 
