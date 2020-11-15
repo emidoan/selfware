@@ -12,13 +12,10 @@ import { Link } from "react-router-dom";
 import { UserList } from "app/views";
 import { Meditation } from "app/views";
 import {Journal} from "app/views";
-<<<<<<< HEAD
 import {JournalEntry} from "app/views";
 import {PastJournal} from "app/views";
 
-=======
 import { Resources } from "app/views";
->>>>>>> resources
 
 function App() {
   return (
