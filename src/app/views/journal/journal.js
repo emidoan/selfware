@@ -21,6 +21,8 @@ class EssayForm extends React.Component {
 
   handleSubmit(event) {
     alert('An essay was submitted: ' + this.state.value);
+    localStorage.setItem("user",this.state.value);
+    alert(localStorage.getItem("user"))
     event.preventDefault();
   }
 
@@ -28,10 +30,14 @@ class EssayForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Journal Entry:
-          <textarea value={this.state.value} onChange={this.handleChange} rows = {20} />
+          <textarea rows = {1} style={journalStyle.textArea} placeholder="Type in today's date"/> 
+          <br></br>
+          <br></br>
+          <textarea value={this.state.value} onChange={this.handleChange} rows = {20} style={journalStyle.textArea} placeholder="How are you feeling?"/>
         </label>
-        <input type="submit" value="Save" />
+        <br></br>
+        <br></br>
+        <input type="submit" value="Save" className="submit-button" />
       </form>
     );
   }
@@ -48,6 +54,12 @@ function Journal() {
   );
 }
 
-
+const journalStyle = {
+    textArea: {
+        border: 0,
+        resize: 'none',
+        width: 500,
+    }
+}
 
 export default Journal;
