@@ -8,16 +8,16 @@
   align-items: left;
   justify-content: center;
 
-  h {
-    color: $white;
-  }
+
 }
 
-.submit-button {
+.newButton {
     border: 0;
-    border-radius: 15px;
+    border-radius: 50px;
     background-color: #6ab691;
+    justify-content: center;
+    align-items: left;
     color: $white;
-    width: 75px;
+    width: 25px;
     height: 25px;
 }
