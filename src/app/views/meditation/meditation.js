@@ -11,9 +11,11 @@ import { render } from "@testing-library/react";
 
 
 const renderTime = ({ remainingTime }) => {
-  if (remainingTime === 0) {
+   if (remainingTime === 0) {
+    
     return <div className="timer">Done Meditating</div>;
-  }
+  } 
+
 
   return (
     <div className="timer">
@@ -94,8 +96,9 @@ function Meditation() {
           duration={60}
           colors={[["#36c982", 0.33], ["#49d52a", 0.33], ["#f7cb08", 0.33], ["#ff9100", 0.33], ["#e47f1b", 0.33]]}
           onComplete={() => [true, 3000]}
+          
         >
-          {renderTime}
+          {(remainingTime) => renderTime(remainingTime)}
         </CountdownCircleTimer>
       </div>
       <p>
