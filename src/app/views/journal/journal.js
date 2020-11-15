@@ -3,6 +3,7 @@ import "./journal.scss";
 import { Link } from "react-router-dom";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import { JournalEntry } from "app/views";
+import  { EntryList } from "app/views";
 
 import axios from "axios"
 
@@ -10,16 +11,13 @@ function Journal() {
 
     return (
         <div>
-            <Router>
-                <Link to ="/journal/journal-entry">
-                    <button type="button">
-                        +
-                    </button>
-                </Link> 
-                <Switch>
-                    <Route exact path={"/journal/journal-entry"}component={JournalEntry}/>
-                </Switch>
-            </Router>
+            <Switch>
+                <Route exact path={"/journal"}component={Lol}>     
+                </Route>
+                <Route exact path={"/journal/journal-entry"} component={JournalEntry}>
+                </Route>
+            </Switch>
+
 
         </div>
 
@@ -28,3 +26,17 @@ function Journal() {
 }
 
 export default Journal;
+
+function Lol() {
+    return (
+        <div>
+            <Route exact path={"/journal"}component={EntryList}/>
+            <Link to ="/journal/journal-entry">
+                <button type="button" class="newButton">
+                    +
+                </button>
+            </Link> 
+        </div>
+
+    );
+}

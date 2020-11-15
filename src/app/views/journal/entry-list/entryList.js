@@ -4,8 +4,9 @@ import "./entryList.scss";
 import axios from "axios"
 
 import { EntryCard } from "app/components";
+import { JournalEntry } from "app/views";
 
-function entryList() {
+function EntryList() {
 
   // List of users from the database
   const [users, setUsers] = useState(null);
@@ -28,9 +29,9 @@ function entryList() {
   }
 
   return (
-    <div className="user-list">
-      {(users || []).map(function (user, index) {
-        return <EntryCard user={user} key={index} number={index}/>;
+    <div className="entry-list">
+      {(users || []).map(function (user) {
+        return <EntryCard user={user}/>;
       })}
     </div>
   );

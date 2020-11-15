@@ -1,13 +1,12 @@
 @import "globals/hack-variables.scss";
 
-.user-card {
+.entry-card {
   background-color: white;
   color: $black;
   width: 20rem;
   margin-bottom: $large-spacing;
   padding: $medium-spacing;
   text-decoration: none;
-  transition: 0.5s all;
   text-align: left;
   border-radius: $small-spacing;
   position: relative;
@@ -36,6 +35,6 @@
   }
 }
 
-.user-card:hover {
+.entry-card:hover {
   box-shadow: $large-shadow;
 }

@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { UserList } from "app/views";
 import { Meditation } from "app/views";
 import {Journal} from "app/views";
+import {JournalEntry} from "app/views";
 
 function App() {
   return (
@@ -25,11 +26,21 @@ function App() {
         <Link to ="/journal">Journal</Link>
 
         <Switch>
+          <Route exact path={'/'}component={Home}/>
           <Route exact path={"/meditation"}component={Meditation}/>
-          <Route exact path={"/journal"}component={Journal}/>
+          <Route path={"/journal"}component={Journal}></Route>
         </Switch>
       </Router>
     </div>
+  );
+}
+
+function Home() {
+  return (
+    <div>
+    <h1>SelfWare</h1>
+    <h2>Medidate freely.</h2>
+  </div>
   );
 }
 
