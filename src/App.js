@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { UserList } from "app/views";
 import { Meditation } from "app/views";
 import {Journal} from "app/views";
+import { Resources } from "app/views";
 
 function App() {
   return (
@@ -21,12 +22,13 @@ function App() {
 
         <Link to ="/">Home</Link>
         <Link to ="/meditation">Meditation</Link>
-
         <Link to ="/journal">Journal</Link>
+        <Link to ="/resources">Resources</Link>
 
         <Switch>
           <Route exact path={"/meditation"}component={Meditation}/>
           <Route exact path={"/journal"}component={Journal}/>
+          <Route exact path={"/resources"}component={Resources}/>
         </Switch>
       </Router>
     </div>
