@@ -10,7 +10,7 @@ function EntryCard({ user }) {
             <h2>
                 {user.date}
             </h2>
-            <h3>{user.message}</h3>
+            <h3>{user.value}</h3>
       </div>
  
   );

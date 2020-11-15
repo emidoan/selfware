@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./journalEntry.scss";
+import "./pastjournal.scss";
 
 import axios from "axios"
 import { EntryCard } from "app/views";
@@ -25,23 +25,15 @@ class EssayForm extends React.Component {
         this.setState({date: event.target.value});
       }
     handleSubmit(event) {
-      localStorage.setItem(this.state.date, this.state.value)
-      alert('An essay was submitted: ' + this.state.value);
-      alert('date: ' + this.state.date);
-      //localStorage.setItem(this.state.date, this.state.value);
-      let item = {date: this.state.date, value: this.state.value};
-      this.props.addItem(item);
-      event.preventDefault();
+      var pastEntry = localStorage.getItem(this.state.date);
+      alert("Date: " + this.state.date + "\nEntry: \n" + pastEntry)
     }
   
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
           <label>
-              <textarea value = {this.state.date} rows = {1} style={journalStyle.textArea} onChange = {this.handleDateChange} placeholder="Type in today's date"/>
-              <br></br>
-              <br></br>
-              <textarea value={this.state.value} onChange={this.handleChange} rows = {20} style={journalStyle.textArea} placeholder="How are you feeling?"/>
+              <textarea value = {this.state.date} rows = {1} style={journalStyle.textArea} onChange = {this.handleDateChange} placeholder="Type in today's date..."/>
           </label>
           <br></br>
           <br></br>
@@ -51,12 +43,11 @@ class EssayForm extends React.Component {
     }
   }
   
-  function JournalEntry() {
-  
-  
+  function PastJournal() {
+
     return (
       <div className="journal">
-        <h1>Self Reflection Journal</h1>
+        <h1>View Past Journals</h1>
         <EssayForm/>
       </div>
     );
@@ -66,8 +57,9 @@ class EssayForm extends React.Component {
       textArea: {
           border: 0,
           resize: 'none',
-          width: 500,
+          width: 100,
+          height: 50,
       }
   }
 
-export default JournalEntry
+export default PastJournal

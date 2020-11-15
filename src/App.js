@@ -13,6 +13,8 @@ import { UserList } from "app/views";
 import { Meditation } from "app/views";
 import {Journal} from "app/views";
 import {JournalEntry} from "app/views";
+import {PastJournal} from "app/views";
+
 
 function App() {
   return (
@@ -24,11 +26,13 @@ function App() {
         <Link to ="/meditation">Meditation</Link>
 
         <Link to ="/journal">Journal</Link>
+        <Link to ="/pastjournal">Load Past Journals</Link>
 
         <Switch>
           <Route exact path={'/'}component={Home}/>
           <Route exact path={"/meditation"}component={Meditation}/>
           <Route path={"/journal"}component={Journal}></Route>
+          <Route path={"/pastjournal"}component={PastJournal}/>
         </Switch>
       </Router>
     </div>
