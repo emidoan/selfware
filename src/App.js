@@ -22,7 +22,7 @@ function App() {
         <Link to ="/">Home</Link>
         <Link to ="/meditation">Meditation</Link>
 
-        <Link to ="journal">Journal</Link>
+        <Link to ="/journal">Journal</Link>
 
         <Switch>
           <Route exact path={"/meditation"}component={Meditation}/>

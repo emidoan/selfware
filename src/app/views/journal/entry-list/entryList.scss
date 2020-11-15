@@ -1,11 +1,11 @@
 @import "globals/hack-variables.scss";
 
-.user-list {
+.entry-list {
   width: 80vw;
   padding-top: $xl-spacing;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: center;
 
   a {
