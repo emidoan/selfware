@@ -1,65 +1,31 @@
+journal.js
 import React, { useState, useEffect } from "react";
 import "./journal.scss";
+import { Link } from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { JournalEntry } from "app/views";
 
 import axios from "axios"
 
-// import { UserCard } from "app/components";
-class EssayForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: ''
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('An essay was submitted: ' + this.state.value);
-    localStorage.setItem("user",this.state.value);
-    alert(localStorage.getItem("user"))
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <textarea rows = {1} style={journalStyle.textArea} placeholder="Type in today's date"/> 
-          <br></br>
-          <br></br>
-          <textarea value={this.state.value} onChange={this.handleChange} rows = {20} style={journalStyle.textArea} placeholder="How are you feeling?"/>
-        </label>
-        <br></br>
-        <br></br>
-        <input type="submit" value="Save" className="submit-button" />
-      </form>
-    );
-  }
-}
-
 function Journal() {
 
+    return (
+        <div>
+            <Router>
+                <Link to ="/journal/journal-entry">
+                    <button type="button" class>
+                        +
+                    </button>
+                </Link> 
+                <Switch>
+                    <Route exact path={"/journal/journal-entry"}component={JournalEntry}/>
+                </Switch>
+            </Router>
 
-  return (
-    <div className="journal">
-      <h1>Journal</h1>
-      <EssayForm/>
-    </div>
-  );
-}
+        </div>
 
-const journalStyle = {
-    textArea: {
-        border: 0,
-        resize: 'none',
-        width: 500,
-    }
+
+    );
 }
 
 export default Journal;
