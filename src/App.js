@@ -9,13 +9,13 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 // Website imports for classes you made
-import { UserList } from "app/views";
-import { Meditation } from "app/views";
-import {Journal} from "app/views";
-import {JournalEntry} from "app/views";
-import {PastJournal} from "app/views";
+import { UserList } from "./app/views";
+import { Meditation } from "./app/views";
+import {Journal} from "./app/views";
+import {JournalEntry} from "./app/views";
+import {PastJournal} from "./app/views";
 
-import { Resources } from "app/views";
+import { Resources } from "./app/views";
 
 function App() {
   return (
