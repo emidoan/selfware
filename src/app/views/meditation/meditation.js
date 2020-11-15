@@ -92,8 +92,8 @@ function Meditation() {
         <CountdownCircleTimer
           isPlaying
           duration={60}
-          colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
-          onComplete={() => [true, 1000]}
+          colors={[["#36c982", 0.33], ["#49d52a", 0.33], ["#f7cb08", 0.33], ["#ff9100", 0.33], ["#e47f1b", 0.33]]}
+          onComplete={() => [true, 3000]}
         >
           {renderTime}
         </CountdownCircleTimer>
@@ -107,9 +107,6 @@ function Meditation() {
         <h4>
         Feel free to add some music to your experience!
         </h4>
-        {/* <button className="button" onClick={reset}>
-          Reset
-        </button> */}
       </div>
     </div>
     </div>
