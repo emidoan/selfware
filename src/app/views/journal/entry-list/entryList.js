@@ -4,7 +4,6 @@ import "./entryList.scss";
 import axios from "axios"
 
 import { EntryCard } from "app/components";
-import { JournalEntry } from "app/views";
 
 function EntryList(props) {
 
