@@ -14,6 +14,7 @@ import { Meditation } from "app/views";
 import {Journal} from "app/views";
 import {JournalEntry} from "app/views";
 
+
 function App() {
   return (
     <div className="app fill-view">

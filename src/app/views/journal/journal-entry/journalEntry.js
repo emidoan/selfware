@@ -27,6 +27,9 @@ class EssayForm extends React.Component {
     handleSubmit(event) {
       alert('An essay was submitted: ' + this.state.value);
       alert('date: ' + this.state.date);
+      //localStorage.setItem(this.state.date, this.state.value);
+      let item = {date: this.state.date, value: this.state.value};
+      this.props.addItem(item);
       event.preventDefault();
     }
   
