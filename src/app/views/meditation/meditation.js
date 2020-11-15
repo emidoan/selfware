@@ -29,13 +29,14 @@ const useAudio = url => {
 
 
 function Meditation() {
-    const [playing, toggle] = useAudio('/AudioMed.mp3');
+    const [playing, toggle] = useAudio('/Guitar.mp3');
     const [seconds, setSeconds] = useState(60);
-    var audio = new Audio('/AudioMed.mp3');
+    var audio = new Audio('/Guitar.mp3');
     audio.volume = 0.2;
 
     function reset() {
       setSeconds(60);
+      audio.currentTime = 0
     }
   
     useEffect(() => {
@@ -51,7 +52,6 @@ function Meditation() {
       }
       return () => clearInterval(interval);
     }, [playing, seconds]);
-    // const soundUrl = '/sounds/guitar-loop.mp3';
 
   return (  
     <div className="user-list">
