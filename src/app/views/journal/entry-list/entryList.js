@@ -30,7 +30,7 @@ function entryList() {
   return (
     <div className="user-list">
       {(users || []).map(function (user, index) {
-        return <UserCard user={user} key={index} number={index}/>;
+        return <EntryCard user={user} key={index} number={index}/>;
       })}
     </div>
   );
