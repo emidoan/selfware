@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./pastjournal.scss";
 
 import axios from "axios"
-import { EntryCard } from "app/views";
+import { EntryCard } from "./app/views";
 
 // import { UserCard } from "app/components";
 class EssayForm extends React.Component {
