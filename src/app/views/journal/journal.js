@@ -28,7 +28,10 @@ class EssayForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          <textarea value={this.state.value} onChange={this.handleChange} rows = {20} style={journalStyle.textArea} placeholder="How are you feeling?"/>
+            <textarea rows = {1} style={journalStyle.textArea} placeholder="Type in today's date"/>
+            <br></br>
+            <br></br>
+            <textarea value={this.state.value} onChange={this.handleChange} rows = {20} style={journalStyle.textArea} placeholder="How are you feeling?"/>
         </label>
         <br></br>
         <br></br>
@@ -43,7 +46,7 @@ function Journal() {
 
   return (
     <div className="journal">
-      <h1>Journal</h1>
+      <h1>Self Reflection Journal</h1>
       <EssayForm/>
     </div>
   );
