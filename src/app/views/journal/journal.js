@@ -26,13 +26,16 @@ class EssayForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Journal Entry:
-          <textarea value={this.state.value} onChange={this.handleChange} rows = {20} />
-        </label>
-        <input type="submit" value="Save" />
-      </form>
+        <div className='journal-entry'>
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                Journal Entry:
+                <textarea value={this.state.value} onChange={this.handleChange} rows = {20} />
+                </label>
+                <input type="submit" value="Save" />
+            </form>
+        </div>
+
     );
   }
 }
