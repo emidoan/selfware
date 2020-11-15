@@ -12,9 +12,13 @@ import { Link } from "react-router-dom";
 import { UserList } from "app/views";
 import { Meditation } from "app/views";
 import {Journal} from "app/views";
+<<<<<<< HEAD
 import {JournalEntry} from "app/views";
 import {PastJournal} from "app/views";
 
+=======
+import { Resources } from "app/views";
+>>>>>>> resources
 
 function App() {
   return (
@@ -24,15 +28,23 @@ function App() {
 
         <Link to ="/">Home</Link>
         <Link to ="/meditation">Meditation</Link>
-
         <Link to ="/journal">Journal</Link>
+<<<<<<< HEAD
         <Link to ="/pastjournal">Load Past Journals</Link>
+=======
+        <Link to ="/resources">Resources</Link>
+>>>>>>> resources
 
         <Switch>
           <Route exact path={'/'}component={Home}/>
           <Route exact path={"/meditation"}component={Meditation}/>
+<<<<<<< HEAD
           <Route path={"/journal"}component={Journal}></Route>
           <Route path={"/pastjournal"}component={PastJournal}/>
+=======
+          <Route exact path={"/journal"}component={Journal}/>
+          <Route exact path={"/resources"}component={Resources}/>
+>>>>>>> resources
         </Switch>
       </Router>
     </div>

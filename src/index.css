@@ -20,9 +20,15 @@
  * Remove the margin in all browsers.
  */
 
+@font-face{
+  font-family: selfCareFont;
+  src: url(Comfortaa-Light.ttf);
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: selfCareFont;
 }
 
 /**
