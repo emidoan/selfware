@@ -3,38 +3,55 @@ import "./meditation.scss";
 import ReactDOM from 'react-dom';
 
 
+
 import axios from "axios"
 
 import { UserCard } from "app/components";
 import { render } from "@testing-library/react";
 
+const useAudio = url => {
+  const [audio] = useState(new Audio(url));
+  const [playing, setPlaying] = useState(false);
+  const toggle = () => setPlaying(!playing);
+  useEffect(() => {
+      playing ? audio.play() : audio.pause();
+    },
+    [playing]
+  );
+  useEffect(() => {
+    audio.addEventListener('ended', () => setPlaying(false));
+    return () => {
+      audio.removeEventListener('ended', () => setPlaying(false));
+    };
+  }, []);
+  return [playing, toggle];
+};
+
 
 function Meditation() {
+    const [playing, toggle] = useAudio('/AudioMed.mp3');
     const [seconds, setSeconds] = useState(60);
-    const [isActive, setIsActive] = useState(false);
-  
-    function toggle() {
-      setIsActive(!isActive);
-    }
-  
+    var audio = new Audio('/AudioMed.mp3');
+    audio.volume = 0.2;
+
     function reset() {
       setSeconds(60);
-      setIsActive(false);
     }
   
     useEffect(() => {
       let interval = null;
-      if (isActive) {
+      if (playing) {
         interval = setInterval(() => {
           if (seconds > 0) {
           setSeconds(seconds => seconds - 1);
           }
         }, 1000);
-      } else if (!isActive && seconds === 0) {
+      } else if (!playing && seconds === 0) {
         clearInterval(interval);
       }
       return () => clearInterval(interval);
-    }, [isActive, seconds]);
+    }, [playing, seconds]);
+    // const soundUrl = '/sounds/guitar-loop.mp3';
 
   return (  
     <div className="user-list">
@@ -44,8 +61,8 @@ function Meditation() {
         {seconds}s
       </div>
       <div className="row">
-        <button className={`button button-primary button-primary-${isActive ? 'active' : 'inactive'}`} onClick={toggle}>
-          {isActive ? 'Pause' : 'Start'}
+        <button className={`button button-primary button-primary-${playing ? 'active' : 'inactive'}`} onClick={toggle}>
+          {playing ? 'Pause' : 'Start'}
         </button>
         <button className="button" onClick={reset}>
           Reset
